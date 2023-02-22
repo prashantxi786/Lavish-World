@@ -1,15 +1,21 @@
+
+
+import "./App.css";
+import Allroutes from "./Routes/Allroutes";
+
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
-import './App.css'
-import Signin from './Components/Auth Components/Signin'
-function App() {
-  const [count, setCount] = useState(0)
 
+import Signin from './Components/Auth Components/Signin'
+
+function App() {
   return (
     <div className="App">
-      {/* <Signin/> */}
+
+ <Allroutes/>
+
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
