@@ -6,7 +6,7 @@ import Dahsboard from "../pages/admin/Dahsboard"
 import Orders from "../pages/admin/Orders";
 import Products from "../pages/admin/Products";
 import Users from "../pages/admin/Users";
-
+import Homepage from "../Pages/Homepage"
 const Allroutes = () => {
   return (
     <Adminsidebar>
@@ -19,6 +19,7 @@ const Allroutes = () => {
         <Route path="/categories" element={<Categories />}></Route>
       </Routes>
     </Adminsidebar>
+
   );
 }
 export default Allroutes
