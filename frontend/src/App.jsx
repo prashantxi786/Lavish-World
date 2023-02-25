@@ -1,5 +1,8 @@
 
-import Navbar from "./Components/HomepageComponents/Navbar"
+// import Navbar from "./Components/HomepageComponents/Navbar"
+// import Navbar from "./Components/Navbar/Navbar";
+// import SmallNavbar from "./Components/Navbar/SmallNavbar"
+// import Footer from "./Components/Footer/Footer"
 import "./App.css";
 import Allroutes from "./Routes/Allroutes";
 import { useState } from 'react'
@@ -12,7 +15,14 @@ function App() {
   return (
 
     <div className="App">
-      <Navbar/>
+      
+      {/* <div className="big">
+        <Navbar />
+      </div>
+      <div className="small">
+        <SmallNavbar />
+      </div> */}
+
       <Allroutes/>
 
       
