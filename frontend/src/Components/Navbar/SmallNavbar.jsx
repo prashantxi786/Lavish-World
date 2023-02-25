@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../assets/lavish_world_logo.png";
+import Logo from "../../assets/lavish_world_logo.png";
 import styles from "../Navbar/Navbar.module.css";
 import { BsPerson } from "react-icons/bs";
 import { AiOutlineShoppingCart } from "react-icons/ai";

@@ -1,7 +1,7 @@
 import { AiOutlineShoppingCart, AiOutlineSearch } from "react-icons/ai";
 import { BsPerson } from "react-icons/bs";
 import { FiHeart } from "react-icons/fi"
-import Logo from "../assets/lavish_world_logo.png";
+import Logo from "../../assets/lavish_world_logo.png";
 
 import {
   // Dropdown,
