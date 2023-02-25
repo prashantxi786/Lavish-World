@@ -26,6 +26,8 @@ import {
   import { useDisclosure,useToast} from '@chakra-ui/react';
   import {useState } from "react"
   import style from "./Signin.module.css"
+  import { BsPerson } from "react-icons/bs";
+import { NavLink } from 'react-router-dom';
 
 const Signin = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
@@ -46,27 +48,26 @@ const Signin = () => {
     }
   return (
     <>
-      <Button  onClick={onOpen} 
-              fontSize={'sm'}
+      <Text  onClick={onOpen} 
+              fontSize={'x-lg'}
               fontWeight={400}
               color={'white'}
-              bg={'#65c297'}
-              href={'#'}
               _hover={{
-                bg: '#458B6A',
-              }}>Login/Signin</Button>
+                color:"white",
+                // bg: '#458B6A',
+              }}><BsPerson className='icons' _hover={{
+                color:"red"}} color={"#616161"}/></Text>
       <Modal
         isCentered
         onClose={onClose}
         isOpen={isOpen}
         // motionPreset='slideInBottom'
         overflow="hidden"
-       
       >
-        <ModalOverlay />
-        <ModalContent  >
-          <ModalBody>
-             <Flex
+      <ModalOverlay />
+      <ModalContent  >
+      <ModalBody>
+      <Flex
       minH={'30vh'}
       align={'center'}
       justify={'center'}
@@ -81,7 +82,6 @@ const Signin = () => {
           boxShadow={'lg'}
           p={8}
           >
-          
           <Stack spacing={4}>
             <FormControl  >
               <FormLabel className={style.font}>Email address</FormLabel>
@@ -101,6 +101,25 @@ const Signin = () => {
                 >
                 Sign in
               </Button>
+              <Box>
+             <Text>
+              Already User?
+              </Text> 
+            <NavLink
+               to="/signUp"
+                >
+                <Button
+                bg={'#65c297'}
+                color={'white'}
+                _hover={{
+                  bg: '#458B6A',
+                }}
+                width="100%"
+                >
+                Sign Up
+                </Button>
+              </NavLink>
+              </Box>
             <Stack spacing={10}>
               <Stack
                 direction={{ base: 'column', sm: 'row' }}

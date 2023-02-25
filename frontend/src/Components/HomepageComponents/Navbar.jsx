@@ -5,7 +5,8 @@ import { BsSearch } from "react-icons/bs";
 import { BsPerson } from "react-icons/bs";
 import { FiHeart } from "react-icons/fi";
 import { AiOutlineShoppingCart } from "react-icons/ai"
-
+import Signin from '../Auth Components/Signin';
+import Cart from '../../Pages/Cart/cart';
 
 const Navbar = () => {
   return (
@@ -24,9 +25,9 @@ const Navbar = () => {
           </div>
           <div className='cart-section'>
             <div className='cart-icons'>
-              <BsPerson className='icons'/>
+              <Signin/>
               <FiHeart className='icons' />
-              <AiOutlineShoppingCart className='cart-icon icons1'/>
+              <Cart/>
             </div>
 
           </div>
