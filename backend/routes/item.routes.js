@@ -47,7 +47,7 @@ itemRouter.post("/post",async(req, res) =>{
     }
 });
 
-itemRouter.patch("/update", async (req, res) => {
+itemRouter.patch("/update/:id", async (req, res) => {
     const id = req.params.id
   try {
    
@@ -57,7 +57,7 @@ itemRouter.patch("/update", async (req, res) => {
     console.log(error);
   }
 });
-itemRouter.delete("/delete", async (req, res) => {
+itemRouter.delete("/delete/:id", async (req, res) => {
   const id = req.params.id;
   try {
     await itemRouter.findByIdAndDelete({ _id: id });
@@ -66,7 +66,7 @@ itemRouter.delete("/delete", async (req, res) => {
     console.log(error);
   }
 });
-itemRouter.put("/put", async (req, res) => {
+itemRouter.put("/put/:id", async (req, res) => {
   const id = req.params.id;
   try {
     await itemRouter.findByIdAndUpdate({ _id: id }, req.body);
