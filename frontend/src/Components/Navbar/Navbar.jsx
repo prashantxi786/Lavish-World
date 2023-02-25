@@ -29,7 +29,7 @@ import {
   InputLeftElement,
   InputGroup,
   Input,
-  Text,
+  Text,Link
 } from "@chakra-ui/react";
 import styles from "./Navbar.module.css";
 import { useState } from "react";
@@ -104,25 +104,25 @@ const Navbar = ({ display = "flex" }) => {
           justify={"center"}
           display={display}
         >
-          <Text>New</Text>
-          <Text
+          <Link href="/new">New</Link>
+          <Link href="/massage"
             onMouseEnter={() => setdropdown1(true)}
             onMouseLeave={() => setdropdown1(false)}
           >
             Massage
-          </Text>
-          <Text
+          </Link>
+          <Link href="/wellness"
             onMouseEnter={() => setdropdown2(true)}
             onMouseLeave={() => setdropdown2(false)}
           >
             Wellness
-          </Text>
-          <Text
+          </Link>
+          <Link href="/sleep"
             onMouseEnter={() => setdropdown3(true)}
             onMouseLeave={() => setdropdown3(false)}
           >
             Sleep
-          </Text>
+          </Link>
           <Text
             onMouseEnter={() => setdropdown4(true)}
             onMouseLeave={() => setdropdown4(false)}

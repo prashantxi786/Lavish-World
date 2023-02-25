@@ -1,6 +1,6 @@
 import React, { useEffect,useState } from 'react'
 import axios from 'axios'
-import {url} from './url'
+import { url } from './url'
 import {Grid,GridItem,Input,Button,Box,Flex,Text,Checkbox,CheckboxGroup} from "@chakra-ui/react"
 import ProductCard from"../../Components/productcomponents/ProductCard"
 const New = () => {
@@ -8,18 +8,18 @@ const New = () => {
   const [min,setMin]=useState("")
   const [max,setMax]=useState("")
     useEffect(()=>{
-         axios.get(`${url}items?category=new&min=${min}&max=${max}`)
+         axios.get(`${url}items?category=massage&min=${min}&max=${max}`)
         .then((response) =>setData(response.data))
         .catch((error) => console.log(error))
         
     },[min,max])
-    const sort=(val,alpha)=>{
-      axios.get(`${url}items?category=new&price=${val}`)
+    const sort=(val)=>{
+      axios.get(`${url}items?category=massage&price=${val}`)
       .then((response) =>setData(response.data))
       .catch((error) => console.log(error))
     }
     const sortbyalphabet=(alpha)=>{
-      axios.get(`${url}items?category=new&title=${alpha}`)
+      axios.get(`${url}items?category=massage&title=${alpha}`)
       .then((response) =>setData(response.data))
       .catch((error) => console.log(error))
     }

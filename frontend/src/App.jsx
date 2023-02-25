@@ -23,6 +23,7 @@ function App() {
       <div className="small">
         <SmallNavbar />
     </div>
+    <ProductsRoutes/>
     <Footer/>
 
       {/* <Allroutes/> */}
