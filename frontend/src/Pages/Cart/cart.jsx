@@ -1,96 +1,75 @@
-import React from 'react';
-import{
-  Drawer,
-  DrawerBody,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerOverlay,Input,
-  DrawerContent,
-  DrawerCloseButton,Button,
-  Accordion,
-  AccordionItem,
-  AccordionButton,
-  AccordionPanel,
-  Divider,Box,Image,Text
-} from "@chakra-ui/react"
-import { NavLink } from 'react-router-dom';
-import { useDisclosure } from '@chakra-ui/react';
-import { GiHamburgerMenu } from 'react-icons/gi';
-import { ChevronDownIcon ,SearchIcon} from '@chakra-ui/icons'
-import logo from "../../assets/lavish_world_logo.png"
-import { AiOutlineShoppingCart } from "react-icons/ai"
-
-const Cart = () => {
-  let style={
-    width: "48px",
-    height: "30px",
-    backgroundColor:" #61C396",
-    padding: "1px 3px 1px 0px",
-    color: "white",
-    borderRadius: "5px",
-  }
-  const { isOpen, onOpen, onClose } = useDisclosure()
-  const btnRef = React.useRef() 
-  return (
-    <div>
-      <AiOutlineShoppingCart style={style}fontSize={"25px"} ref={btnRef} onClick={onOpen}/>
-      <Drawer
-        isOpen={isOpen}
-        placement='right'
-        onClose={onClose}
-        finalFocusRef={btnRef}
-        size="xs"
+import {
+  Box,
+  Flex,
+  Heading,
+  HStack,
+  Link,
+  Stack,
+  useColorModeValue as mode,
+} from '@chakra-ui/react'
+import { CartItem } from './CartItem'
+import { CartOrderSummary } from './CartOrderSummary'
+import { cartData } from './_data.js'
+import style from "./cart.module.css"
+export const CartPage = () => (
+  <Box
+    className={style.font}
+    maxW={{
+      base: '3xl',
+      lg: '7xl',
+    }}
+    mx="auto"
+    px={{
+      base: '4',
+      md: '8',
+      lg: '12',
+    }}
+    py={{
+      base: '6',
+      md: '8',
+      lg: '12',
+    }}
+  >
+    <Stack
+      direction={{
+        base: 'column',
+        lg: 'row',
+      }}
+      align={{
+        lg: 'flex-start',
+      }}
+      spacing={{
+        base: '8',
+        md: '16',
+      }}
+    >
+      <Stack
+        spacing={{
+          base: '8',
+          md: '10',
+        }}
+        flex="2"
       >
-        <DrawerOverlay />
-        <DrawerContent>
-          <DrawerCloseButton />
-          <DrawerHeader><Image h="30px" src={logo}></Image></DrawerHeader>
+        <Heading fontSize="2xl" fontWeight="400" 
+        id={style.font}
+        >
+          Shopping Cart (3 items)
+        </Heading>
 
-          <DrawerBody display={"flex"} flexDir="column" gap={"20px"}>
-            {/* <NavLink  color="red" to="/about">Cart</NavLink> */}
-            {/* <Divider colorScheme="blackAlpha" borderColor={"black"}/> */}
-            <NavLink color="red" to="/">Contact us</NavLink>
-            <Divider colorScheme="blackAlpha" borderColor={"black"}/>
-            <Accordion allowToggle >
-            <AccordionItem border="none">
-                <AccordionButton  p="0px" >     
-                  <Box w="100%"display={"flex"} justifyContent="space-between"><Text >View Cart</Text><ChevronDownIcon fontSize="25px"/></Box>
-                </AccordionButton>
-              <AccordionPanel>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                commodo consequat.
-                <Button display={"block"} width="100%"
-                    bg={'#65c297'}
-                    color={'white'}
-                    mb="5px"
-                    _hover={{
-                      bg: '#458B6A',
-                    }}>View More</Button>
-                <Button display={"block"} width="100%"
-                    border={'1px solid #65c297'}
-                    bg="white"
-                    color={'black'}
-                    _hover={{
-                      bg: '#458B6A',
-                      color:"white"
-                    }}>Checkout</Button>
-              </AccordionPanel>
-            </AccordionItem>
-          </Accordion>
-            <Divider colorScheme="blackAlpha" borderColor={"black"}/>
-            <NavLink color="red" to="/">Whatsapp</NavLink>
-            <Divider colorScheme="blackAlpha" borderColor={"black"}/>
-            <NavLink color="red" to="/">Call Now</NavLink>
-          </DrawerBody>
-          <DrawerFooter display={"flex"} justifyContent="center"  border="1px solid gray">
-            <Text fontSize={"xx-small"}> *enter promo codes at checkout. taxes and shipping calculated at checkout.</Text>
-          </DrawerFooter>
-        </DrawerContent>
-      </Drawer>
-    </div>
-  );
-}
+        <Stack spacing="6">
+          {cartData.map((item) => (
+            <CartItem key={item.id} {...item} />
+          ))}
+        </Stack>
+      </Stack>
 
-export default Cart;
+      <Flex direction="column" align="center" flex="1">
+        <CartOrderSummary />
+        <HStack mt="6" fontWeight="semibold">
+          <p>or</p>
+          <Link color={mode('#65c297', 'blue.200')}>Continue shopping</Link>
+        </HStack>
+      </Flex>
+    </Stack>
+  </Box>
+)

@@ -52,5 +52,34 @@ itemRouter.post("/post",async(req, res) =>{
     } catch (error) {
         console.log(error)
     }
-})
+});
+
+itemRouter.patch("/update", async (req, res) => {
+    const id = req.params.id
+  try {
+   
+    await itemRouter.findByIdAndUpdate({_id:id}, req.body) ;
+    res.send("Product updates successfully");
+  } catch (error) {
+    console.log(error);
+  }
+});
+itemRouter.delete("/delete", async (req, res) => {
+  const id = req.params.id;
+  try {
+    await itemRouter.findByIdAndDelete({ _id: id });
+    res.send("Product deleted successfully");
+  } catch (error) {
+    console.log(error);
+  }
+});
+itemRouter.put("/put", async (req, res) => {
+  const id = req.params.id;
+  try {
+    await itemRouter.findByIdAndUpdate({ _id: id }, req.body);
+    res.send("Product added successfully");
+  } catch (error) {
+    console.log(error);
+  }
+});
 module.exports={itemRouter}

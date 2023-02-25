@@ -11,11 +11,15 @@ import Signin from './Components/Auth Components/Signin'
 import ProductsRoutes from "./Routes/ProductsRoutes";
 import New  from "./Pages/ProductPages/New"
 import Dahsboard from "./Pages/admin/Dahsboard";
-import Cart from "./Pages/Cart/cart";
+import CartDrawer from "./Pages/Cart/cartdrawer";
+import SignUp from "./Components/Auth Components/SignUp";
+import {CartPage} from "./Pages/Cart/cart";
+import Checkout from "./Pages/Checkout/checkout";
+
 function App() {
   return (
-
     <div className="App">
+
       
       <div className="big">
         <Navbar />
@@ -29,6 +33,7 @@ function App() {
       {/* <Allroutes/> */}
 
       
+
     </div>
   );
 
