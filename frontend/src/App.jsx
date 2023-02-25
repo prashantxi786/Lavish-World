@@ -8,9 +8,10 @@ import Allroutes from "./Routes/Allroutes";
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import Signin from './Components/Auth Components/Signin'
+import ProductsRoutes from "./Routes/ProductsRoutes";
+import New  from "./Pages/ProductPages/New"
 import Dahsboard from "./Pages/admin/Dahsboard";
 import Cart from "./Pages/Cart/cart";
-
 function App() {
   return (
 
