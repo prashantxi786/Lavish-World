@@ -12,62 +12,85 @@ import {
 import { FaTh, FaCartPlus, FaList, FaUserAlt,FaRegChartBar, FaBars } from "react-icons/fa";
 import { BsFillHandbagFill } from "react-icons/bs";
 import { IoBagHandleSharp } from "react-icons/io5";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+
+
 const Adminsidebar = ({children}) => {
-const [isOpen, setisOpen] = useState(false)
+const [isOpen, setisOpen] = useState(true)
+const navigate = useNavigate();
 const toggle = ()=>setisOpen(!isOpen)
 
   const menuItem = [
     {
-      path: "/",
+      path: "/admin",
       name: "Dashboard",
-      icon: FaTh ,
+      icon: FaTh,
     },
     {
-      path: "/product",
+      path: "/admin/product",
       name: "Products",
       icon: BsFillHandbagFill,
     },
     {
-      path: "/addproduct",
+      path: "/admin/addproduct",
       name: "Add Products",
-      icon: FaCartPlus ,
+      icon: FaCartPlus,
     },
     {
-      path: "/categories",
+      path: "/admin/categories",
       name: "Categories",
-      icon: FaList ,
+      icon: FaList,
     },
     {
-      path: "/order",
+      path: "/admin/order",
       name: "Orders",
       icon: IoBagHandleSharp,
     },
     {
-      path: "/user",
+      path: "/admin/user",
       name: "Users",
       icon: FaUserAlt,
     },
   ];
   return (
-    <Container>
+    <Box
+      font-display="auto"
+      style={{
+        display: "flex",
+        width: "100%",
+        border: "1px solid blue",
+        color: "white",
+      }}
+    >
       <Box
+        bgColor={"blue"}
+        zIndex={2}
         minH="100Vh"
-        width="300px"
+        maxW={isOpen ? "250px" : "50px"}
         border="1px solid red"
         margin
-        pl="5"
-        pr="5"
+        pl={"5"}
+        pr={isOpen ? "5" : "10"}
+        position="static"
+        alignItems={"center"}
       >
         <Stack>
           <HStack
             alignItems="center"
             justifyContent="space-between"
-            spacing="35px"
+            spacing={isOpen ? "30px" : "none"}
           >
-            <Heading>Admin</Heading>
+            <Heading
+              display={{
+                base: isOpen ? "none" : "block",
+                lg: isOpen ? "block" : "none",
+              }}
+              onClick={() => <navigate to={"/admin"} />}
+            >
+              Admin
+            </Heading>
             <Box>
-              <FaBars />
+              <FaBars onClick={toggle} fontSize="30px" />
             </Box>
           </HStack>
         </Stack>
@@ -80,14 +103,24 @@ const toggle = ()=>setisOpen(!isOpen)
                   {" "}
                   <Icon as={item.icon} boxSize={6} />
                 </Box>
-                <Box> {item.name}</Box>
+                <Box
+                  display={{
+                    base: isOpen ? "block" : "none",
+                    lg: isOpen ? "block" : "none",
+                  }}
+                >
+                  {" "}
+                  {item.name}
+                </Box>
               </Box>
             </NavLink>
           ))}
         </Stack>
       </Box>
-      <main>{children}</main>
-    </Container>
+      <Box border="1px solid red" flex={1}>
+        {children}
+      </Box>
+    </Box>
   );
 };
 export default Adminsidebar;
