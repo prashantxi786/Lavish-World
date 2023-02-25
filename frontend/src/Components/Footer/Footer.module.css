@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.container {
+  width: 100%;
+  height: 34rem;
+  color: #fff;
+  display: flex;
+  background-color: #50514f;
+  align-items: center;
+  padding-left: 150px;
+  column-gap: 200px;
+}
+
+.leftSection {
+  width: 30%;
+  height: 22rem;
+}
+.leftSection p:first-child {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: left;
+}
+.leftSection p:last-child {
+  width: 72%;
+  font-size: 13px;
+  text-align: left;
+  letter-spacing: 1px;
+  margin-top: 10px;
+}
+.footbtn {
+  display: block;
+  width: 80%;
+  background-color: #65c297;
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 10px;
+  font-size: 14px;
+  letter-spacing: 6px;
+  font-weight: 600;
+}
+.socialicon {
+  font-size: 30px;
+  margin-top: 18px;
+  cursor: pointer;
+}
+.rightSection {
+  width: 800px;
+  height: auto;
+  margin-right: 130px;
+}
+.rightbtn {
+  width: 100%;
+  padding: 16px;
+  background-color: #ffb1c7;
+  border-radius: 10px;
+  font-size: 14px;
+  letter-spacing: 5px;
+  font-weight: 600;
+  color: black;
+}
+.listSection {
+  display: flex;
+  gap: 140px;
+  padding-left: 30px;
+}
+.listSection ul {
+  text-align: left;
+  margin-top: 30px;
+}
+.listSection ul li {
+  margin-top: 4px;
+  font-size: 13px;
+  list-style: none;
+}
+.listSection ul li:first-child {
+  font-weight: 600;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+@media screen and (max-width: 1324px) {
+  .container {
+    width: 100%;
+  }
+  .leftSection p:last-child {
+    font-size: 10px;
+    text-align: center;
+    text-align: left;
+  }
+  .footbtn {
+    width: 100%;
+    font-size: 10px;
+  }
+  .socialicon {
+    font-size: 18px;
+    margin-top: 20px;
+  }
+  .rightSection {
+    position: relative;
+    left: -60px;
+    width: 100%;
+    padding: 20px;
+    
+  }
+  .rightbtn {
+    width: 100%;
+    padding: 15px;
+    background-color: #ffb1c7;
+    border-radius: 10px;
+    font-size: 10px;
+    letter-spacing: 5px;
+    font-weight: 600;
+    color: black;
+  }
+  .listSection ul li:first-child {
+    width: 100%;
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+  .container {
+    width: 100%;
+    margin: auto;
+  }
+  .leftSection {
+    position: relative;
+    left: 70px;
+    width: 100%;
+    margin: auto;
+  }
+  .leftSection p:last-child {
+    position: relative;
+    left: -20px;
+    width: 50%;
+    font-size: 8px;
+    text-align: center;
+  }
+  .rightSection {
+    display: none;
+  }
+
+  .footbtn {
+    position: relative;
+    left: -20px;
+    width: 50%;
+    font-size: 10px;
+  }
+
+  .socialicon {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+}
