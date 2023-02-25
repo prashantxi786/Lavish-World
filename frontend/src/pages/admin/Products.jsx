@@ -1,156 +1,135 @@
-import { Box, Button, Image, Text } from "@chakra-ui/react";
-import React, { useState } from "react";
+import { SimpleGrid } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
 
-const Products = ({
-  id,
-  title,
-  price,
-  image,
-  brand,
-  active,
-  handleToggleStatus,
-  handleOpenDetails,
-}) => {
+import { Box, Input, Text, Heading, Select } from "@chakra-ui/react";
+import { ProductCard } from "./ProductItem";
+//import { useSelector, useDispatch } from "react-redux";
+
+const data = [
+  {
+    image:
+      "https://cdn.shopify.com/s/files/1/0262/2226/4423/products/7840_DEEP_ROSE_3_800x.jpg?v=1593707009",
+    price: "$259.00",
+    category: "LELO",
+    desc: "",
+    ratings: 4,
+  },
+  {
+    image:
+      "https://cdn.shopify.com/s/files/1/0262/2226/4423/products/1812_Black_1_200x.jpg?v=1601585235",
+    price: "$259.00",
+    category: "LELO",
+    desc: "",
+    ratings: 4,
+  },
+  {
+    image:
+      "https://cdn.shopify.com/s/files/1/0262/2226/4423/products/7840_DEEP_ROSE_3_800x.jpg?v=1593707009",
+    price: "$259.00",
+    category: "LELO",
+    desc: "",
+    ratings: 4,
+  },
+  {
+    image:
+      "https://cdn.shopify.com/s/files/1/0262/2226/4423/products/7840_DEEP_ROSE_3_800x.jpg?v=1593707009",
+    price: "$259.00",
+    category: "LELO",
+    desc: "",
+    ratings: 4,
+  },
+];
+
+const Products = () => {
+ const [ProductCategory, setProductCategory] = useState("");
+
+  //  const { data, isloader,iserror } = useSelector((state) => state.Admin_Products_reducer);
+  ////  const dispatch = useDispatch();
+
+    const handleCategories=(event)=>{
+        const val = event.target.value;
+   console.log("category",val);
+   setProductCategory(val);
+
+    }
+// useEffect(() => {
+//   dispatch(getData(ProductCategory));
+// }, [ProductCategory]);
+ 
+// if(isloader){
+//   console.log("loader true")
+//   return <Loader />
+// }
+// if(iserror){
+//   return "ERROR-----"
+// }
+
   return (
-    <Box
-      boxShadow="rgba(0, 0, 0, 0.4) 0px 1px 4px, rgba(0, 0, 0, 0.3) 0px 5px 10px -1px, rgba(0, 0, 0, 0.2) 0px -1px 0px inset"
-      cursor={"pointer"}
-    >
+    <>
       <Box
-        display={{ base: "none", md: "flex" }}
-        justifyContent={"space-between"}
-        alignItems={"center"}
-        textAlign={"left"}
-        padding={"10px"}
-        color="black"
+        color={"white"}
+        minH={"100vh"}
+        mt={{ base: "60px", md: "0px" }}
+        padding={"20px"}
+        // bg={"#0c0e1f"}
+        // w={{ base: "100%", md: "71%", lg: "81.61%" }}
+        // ml={{ base: "0%", md: "29%", lg: "18.39%" }}
       >
-        <Box
-          width={{ base: "10%", md: "10%" }}
-          fontSize={{ base: "12px", md: "12px", lg: "md" }}
-        >
-          <Text>{id}</Text>
-        </Box>
-        <Box
-          width={{ base: "5%", md: "13%", lg: "10%" }}
-          onClick={() => {
-            handleOpenDetails(id, image, price, title);
-          }}
-        >
-          <Image width={"80%"} src={image} alt={brand}></Image>
-        </Box>
-        <Box
-          width={{ base: "10%", md: "27%", lg: "25%" }}
-          fontSize={{ base: "12px", md: "12px", lg: "md" }}
-          onClick={() => {
-            handleOpenDetails(id, image, price, title);
-          }}
-        >
-          <Text>{title}</Text>
-        </Box>
-        <Box
-          width={{ base: "5%", md: "10%", lg: "10%" }}
-          fontSize={{ base: "12px", md: "12px", lg: "md" }}
-          onClick={() => {
-            handleOpenDetails(id, image, price, title);
-          }}
-        >
-          <Text>Rs {price} / kg</Text>
-        </Box>
-        <Box
-          width={{ base: "5%", md: "15%", lg: "15%" }}
-          fontSize={{ base: "12px", md: "12px", lg: "md" }}
-        >
-          <Text>{brand === "WheyProtien" ? "WheyProtein" : brand}</Text>
-        </Box>
-        <Box w={{ base: "5%", md: "15%", lg: "10%" }}>
-          <Button
-            onClick={() => {
-              handleToggleStatus(id, active);
+        <Heading>Products</Heading>
+        <Text color={"#00b5b8"}>List of Products</Text>
+
+        <Box mt={"30px"} w={"100%"}>
+          <Box display={"flex"} justifyContent={"space-between"} mb={"20px"}>
+            {/* input search */}
+            <Input
+              type={"text"}
+              placeholder="Search Listings.."
+              w={{ base: "40%", md: "35%", lg: "25%" }}
+            ></Input>
+            {/* select option */}
+            <Select
+              // variant="flushed"
+              bg="#0c0e1f"
+              w={{ base: "45%", md: "25%", lg: "20%" }}
+              cursor={"pointer"}
+              value={ProductCategory}
+              onChange={handleCategories}
+            >
+              Categories
+              <option style={{ backgroundColor: "#0c0e1f" }}>Sleep</option>
+              <option style={{ backgroundColor: "#0c0e1f" }} value="new">
+                New
+              </option>
+              <option style={{ backgroundColor: "#0c0e1f" }} value="Massage">
+                Massage
+              </option>
+              <option style={{ backgroundColor: "#0c0e1f" }} value="Wellness">
+                Wellness
+              </option>
+            </Select>
+          </Box>
+          <SimpleGrid
+            zIndex={0}
+            columns={{ base: 1, md: 3, lg: 4 }}
+            columnGap={{
+              base: "4",
+              md: "6",
             }}
-            size={{ base: "sm", md: "sm", lg: "md" }}
-            colorScheme={active ? "green" : "red"}
+            rowGap={{
+              base: "8",
+              md: "10",
+            }}
           >
-            {active ? "Active" : "Inactive"}
-          </Button>
+            {data.length &&
+              data.map((product, index) => (
+                <ProductCard key={index} product={product} />
+              ))}
+          </SimpleGrid>
         </Box>
       </Box>
-      {/* ```````````````````````````````small screen ``````````````````````````````````*/}
-
-      <Box
-        display={{ base: "flex", md: "none" }}
-        justifyContent={"space-between"}
-        p={"10px"}
-      >
-        {/* ````````````````````````````````````left Div ``````````````````````````````````*/}
-        <Box
-          width={{ base: "50%", sm: "40%" }}
-          onClick={() => {
-            handleOpenDetails(id, image, price, title);
-          }}
-        >
-          <Box
-            h="25px"
-            width={"58px"}
-            border={active ? "1px solid Green" : "1px solid red"}
-            bg={active ? "green.300" : "red.300"}
-            mb={"10px"}
-            color="black"
-            display={"flex"}
-            justifyContent={"center"}
-            alignItems={"center"}
-          >
-            {active ? (
-              <Text as="b" fontSize={{ base: "10px", sm: "12px" }}>
-                Active
-              </Text>
-            ) : (
-              <Text as="b" fontSize={{ base: "10px", sm: "12px" }}>
-                Inactive
-              </Text>
-            )}
-          </Box>
-          <Image
-            width={{ base: "60%", sm: "40%" }}
-            src={image}
-            alt={brand}
-          ></Image>
-          <Text fontWeight={"bold"} fontSize={"lg"} mt={"20px"}>
-            Rs {Math.ceil(Number(price) * 60)}
-          </Text>
-        </Box>
-        {/* ```````````````````````````````````right Div````````````````````````````` */}
-        <Box
-          w={{ base: "50%", sm: "60%" }}
-          display={"flex"}
-          flexDirection={"column"}
-          justifyContent={"space-around"}
-        >
-          <Box>
-            <Text as="b" fontSize={{ base: "13px", sm: "14px" }}>
-              {title}
-            </Text>
-            <Text mt={"10px"} fontSize={{ base: "12px", sm: "13px" }}>
-              {brand === "WheyProtien" ? "WheyProtein" : brand}
-            </Text>
-            <Text mt={"10px"} fontSize={{ base: "12px", sm: "13px" }}>
-              ID- {id}
-            </Text>
-          </Box>
-
-          <Button
-            mt={"10px"}
-            onClick={() => {
-              handleToggleStatus(id, active);
-            }}
-            size={"sm"}
-            colorScheme={active ? "green" : "red"}
-          >
-            {active ? "Active" : "Inactive"}
-          </Button>
-        </Box>
-      </Box>
-    </Box>
+    </>
   );
 };
+
 
 export default Products;

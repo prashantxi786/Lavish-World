@@ -89,7 +89,7 @@ const toggle = ()=>setisOpen(!isOpen)
             >
               Admin
             </Heading>
-            <Box>
+            <Box pl={[0,0,5]}>
               <FaBars onClick={toggle} fontSize="30px" />
             </Box>
           </HStack>
@@ -105,7 +105,7 @@ const toggle = ()=>setisOpen(!isOpen)
                 </Box>
                 <Box
                   display={{
-                    base: isOpen ? "block" : "none",
+                    base: isOpen ? "none" : "block",
                     lg: isOpen ? "block" : "none",
                   }}
                 >
