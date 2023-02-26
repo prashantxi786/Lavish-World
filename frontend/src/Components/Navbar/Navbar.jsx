@@ -2,7 +2,7 @@
 import { AiOutlineShoppingCart, AiOutlineSearch } from "react-icons/ai";
 import { BsPerson } from "react-icons/bs";
 import { FiHeart } from "react-icons/fi"
-import Logo from "../assets/lavish_world_logo.png";
+import Logo from "../../assets/lavish_world_logo.png";
 
 import {
   // Dropdown,
@@ -34,8 +34,8 @@ import {
 } from "@chakra-ui/react";
 import styles from "./Navbar.module.css";
 import { useState } from "react";
-
-
+import Signin from "../Auth Components/Signin";
+import CartDrawer from "../../Pages/Cart/cartdrawer";
 const Navbar = ({ display = "flex" }) => {
   // const [dropdown, setdropdown] = useState(false);
   const [dropdown1, setdropdown1] = useState(false);
@@ -78,7 +78,7 @@ const Navbar = ({ display = "flex" }) => {
             <ButtonGroup gap="2" className={styles.rightside}>
               <Flex>
                 <Center>
-                  <BsPerson className={styles.carticons} />
+                  <Signin/>
                 </Center>
               </Flex>
 
@@ -88,11 +88,11 @@ const Navbar = ({ display = "flex" }) => {
                 </Center>
               </Flex>
 
-              <button className={styles.cartbtn} >
+    
                 <Flex align="center">
-                  <AiOutlineShoppingCart className={styles.carticons1} />
+                 <CartDrawer/>
                 </Flex>
-              </button>
+
             </ButtonGroup>
           </Flex>
         </div>
