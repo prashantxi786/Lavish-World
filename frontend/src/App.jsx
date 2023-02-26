@@ -13,15 +13,12 @@ import ProductsRoutes from "./Routes/ProductsRoutes";
 import New  from "./Pages/ProductPages/New"
 import Dahsboard from "./Pages/admin/Dahsboard";
 
-import Navbar from "./Components/Navbar/Navbar"
 
 
 
-import Cart from "./Pages/Cart/cart";
 
 import CartDrawer from "./Pages/Cart/cartdrawer";
 import SignUp from "./Components/Auth Components/SignUp";
-import {CartPage} from "./Pages/Cart/cart";
 import Checkout from "./Pages/Checkout/checkout";
 import Home from "./Pages/HomePage/Home";
 
@@ -40,7 +37,7 @@ function App() {
       </div> 
 
 
-    </div>
+    
   
     <ProductsRoutes/>
     

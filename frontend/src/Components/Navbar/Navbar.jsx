@@ -2,7 +2,7 @@
 import { AiOutlineShoppingCart, AiOutlineSearch } from "react-icons/ai";
 import { BsPerson } from "react-icons/bs";
 import { FiHeart } from "react-icons/fi"
-import Logo from "../assets/lavish_world_logo.png";
+import Logo from "../../assets/lavish_world_logo.png";
 
 import {
   // Dropdown,
@@ -34,7 +34,7 @@ import {
 } from "@chakra-ui/react";
 import styles from "./Navbar.module.css";
 import { useState } from "react";
-
+import { NavLink } from "react-router-dom";
 
 const Navbar = ({ display = "flex" }) => {
   // const [dropdown, setdropdown] = useState(false);
@@ -105,25 +105,25 @@ const Navbar = ({ display = "flex" }) => {
           justify={"center"}
           display={display}
         >
-          <Text>New</Text>
-          <Text
+          <NavLink to="/new">New</NavLink>
+          <NavLink to="/massage"
             onMouseEnter={() => setdropdown1(true)}
             onMouseLeave={() => setdropdown1(false)}
           >
             Massage
-          </Text>
-          <Text
+          </NavLink>
+          <NavLink to="/wellness"
             onMouseEnter={() => setdropdown2(true)}
             onMouseLeave={() => setdropdown2(false)}
           >
             Wellness
-          </Text>
-          <Text
+          </NavLink>
+          <NavLink to="/sleep"
             onMouseEnter={() => setdropdown3(true)}
             onMouseLeave={() => setdropdown3(false)}
           >
             Sleep
-          </Text>
+          </NavLink>
           <Text
             onMouseEnter={() => setdropdown4(true)}
             onMouseLeave={() => setdropdown4(false)}
