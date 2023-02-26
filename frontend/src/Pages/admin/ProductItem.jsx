@@ -14,7 +14,15 @@ import {
 
 export const ProductCard = ({ product }) => {
   console.log(product);
-  const { image, price, category, desc, ratings } = product;
+  const {
+    category,
+    compare_at_price,
+    price,
+    product_title,
+    product_title_href,
+    w_full,
+    _id,
+  } = product;
   return (
     <Stack
       bg={"#efe8e8"}
@@ -30,8 +38,8 @@ export const ProductCard = ({ product }) => {
       <Box position="relative">
         <AspectRatio ratio={5 / 3}>
           <Image
-            src={image}
-            alt={desc}
+            src={product_title_href}
+            alt={product_title}
             fallback={<Skeleton />}
             borderRadius={{
               base: "md",
@@ -46,12 +54,12 @@ export const ProductCard = ({ product }) => {
             fontWeight="medium"
             color={useColorModeValue("gray.700", "gray.400")}
           >
-            📝 {desc}
+            📝 {product_title}
           </Text>
         </Stack>
         <HStack justifyContent={"space-around"}>
           <Text fontSize="sm" color={"black"}>
-            {ratings} Ratings ⭐
+            {compare_at_price} Ratings ⭐
           </Text>
           <Text fontSize="sm" color="black">
             {price} Price 💰
@@ -73,3 +81,11 @@ export const ProductCard = ({ product }) => {
     </Stack>
   );
 };
+
+// category: "sale";
+// compare_at_price: 47.49;
+// price: 45.12;
+// product_title: "Aromatherapy Infused Pillow Lavender";
+// product_title_href: "https://cdn.shopify.com/s/files/1/0262/2226/4423/products/AromatherapyInfusedPillow_Lavendar_IG7522_200x.jpg?v=1596748068";
+// w_full: "Final Sale - No Exchanges or Returns";
+// _id: "63f8615455c951a993a2dccf";
