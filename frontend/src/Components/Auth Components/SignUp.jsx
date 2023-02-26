@@ -2,6 +2,7 @@ import React from 'react';
 import {Box,Heading, Input,Button, Text} from "@chakra-ui/react"
 import style from "./Signin.module.css"
 import { useState } from 'react';
+import axios from "axios"
 const SignUp = () => {
   let obj={
     name:"",
@@ -13,11 +14,19 @@ const SignUp = () => {
   const handleChange=(e)=>{
     setState({...state,[e.target.name]:e.target.value})
   }
-  const handleSubmit=()=>{
-
+  const handleSubmit=async()=>{
+        try {
+          let data=await axios.post("https://good-gray-drill-hose.cyclic.app/users/register",state);
+          setState(obj)
+          console.log(data)
+          alert("User has been signed in")
+        } catch (error) {
+          console.log(error)
+          alert(error)
+        }
   }
   return (
-    <Box textAlign={"center"}>
+    <Box textAlign={"center"} py="50px">
       <Heading id={style.font}>
         Registeration
       </Heading>
@@ -28,11 +37,11 @@ const SignUp = () => {
         </Box>
         <Box>
           <Text>First Name</Text>
-          <Input placeholder='First Name' name="firstname" value={state.name} onChange={handleChange}></Input>
+          <Input placeholder='Name' name="name" value={state.name} onChange={handleChange}></Input>
         </Box>
         <Box>
           <Text>Gender</Text>
-          <Input placeholder='Last Name' name="lastname" value={state.gender} onChange={handleChange}></Input>
+          <Input placeholder='Gender' name="gender" value={state.gender} onChange={handleChange}></Input>
         </Box>
         <Box>
           <Text>Email</Text>
