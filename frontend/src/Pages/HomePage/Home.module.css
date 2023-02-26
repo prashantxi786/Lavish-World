@@ -1,0 +1,201 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.outercontainer{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    margin-top: 50px;
+}
+.sliderSection{
+    width: 59.3%;
+    height: 90vh;
+    padding: 10px;
+}
+.rightSection{
+    width: 50%;
+    height: auto;
+    padding: 10px;
+}
+.topSection{
+    width: 100%;
+    height: 50%;
+    margin-bottom: 40px;
+}
+.bottomSection{
+    display: grid;
+    height: 40%;
+    grid-template-columns: repeat(2,1fr);
+    gap: 1rem;
+}
+.container{
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    grid-template-rows: repeat(2,1fr);
+    gap: 80px;
+    width: 90%;
+    height: auto;
+    margin: auto;
+    margin-top: 30px;
+    padding: 20px;
+}
+.container div{
+    border-radius: 50%;
+    height: 160px ;
+}
+.categorytag{
+    cursor: pointer;
+}
+.categorytag img+p{
+    margin-top: 20px;
+}
+
+.guideContainer{
+    display: grid;
+    grid-template-columns: 2fr 0.9fr;
+    column-gap: 30px;
+    width: 90%;
+    height: auto;
+    margin: auto;
+    margin-top: 90px;
+    margin-bottom: 40px;
+    background-color: #EBEBEB;
+    border-radius: 2px;
+}
+.guideContainer div{
+    padding: 12px 0px 12px 50px;
+}
+.guideContent p:first-child{
+    text-align: left;
+    font-size: 26px;
+    letter-spacing: 7px;
+}
+.guideContent p:last-child{
+    text-align: left;
+    font-size: 35px;
+    letter-spacing: 10px;
+    font-weight: 900;
+    color: #52524F;
+    font-family: sans-serif;
+}
+.guideButton{
+    width: 100%;
+    display:flex ;
+    align-items: center;
+    justify-content: center;
+    
+}
+.guidebtn{
+    display: flex;
+    align-items: center;
+    width: 80%;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #64C496;
+    color: #fff;
+    font-size: 18px;
+    letter-spacing: 5px;
+    font-weight: 600;
+    text-align: center;
+}
+
+
+
+   /* Mobile View */
+   @media screen and (min-width:250px) and (max-width:480px) {
+    .container{
+      grid-template-columns: 1fr;
+      row-gap: 120px;
+      
+    }
+    .bottomSection{
+        margin-top: -235px;
+        height: auto;
+    }
+   .brandslider{
+    position: relative;
+    top: -400px;
+   }
+   .productSlider{
+    position: relative;
+    top: -400px;
+   }
+   .circularGrid{
+    position: relative;
+    top: -400px;
+   }
+    .container div img{
+        display: block;
+        margin: auto;
+        width: 60%;
+    }
+    .guideContainer{
+        grid-template-columns: repeat(1,1fr);
+        column-gap: 30px;
+        margin-top: 130px;
+    }
+    .guidebtn{
+        display: flex;
+        margin: auto;
+        width: 80%;
+        font-size: 16px;
+        letter-spacing: 3px;
+    }
+    .guideContent p:first-child{
+        font-size: 16px;
+        text-align: center;
+    }
+    .guideContent p:last-child{
+        font-size: 12px;
+        text-align: center;
+        letter-spacing: 6px;
+        margin-top: 5px;
+    }
+  }
+
+   /* Tablet View */
+   
+   @media screen and (min-width:481px) and (max-width:1024px) {
+    .container{
+      grid-template-columns: repeat(3,1fr);
+      row-gap: 120px;
+    }
+    .bottomSection{
+        margin-top: -330px;
+        height: auto;
+    }
+
+   .brandslider{
+    position: relative;
+    top: -480px;
+   }
+   .productSlider{
+    position: relative;
+    top: -400px;
+   }
+   .circularGrid{
+    position: relative;
+    top: -400px;
+   }
+    .guideContainer{
+        grid-template-columns: repeat(1,1fr);
+        column-gap: 30px;
+        margin-top: 130px;
+    }
+    .guidebtn{
+        width: 50%;
+        letter-spacing: 9px;
+    }
+    .guideContent p:first-child{
+        font-size: 20px;
+        text-align: center;
+    }
+    .guideContent p:last-child{
+        font-size: 20px;
+        text-align: center;
+    }
+  }
