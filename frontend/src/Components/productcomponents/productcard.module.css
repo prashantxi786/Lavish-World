@@ -1,0 +1,14 @@
+.img:hover{
+    transform: scale(0.9);
+}
+.img{
+   transition: transform 1s;
+}
+.button:hover{
+    transform: scale(0.9);
+    
+}
+.button{
+   transition: transform 2s;
+   margin: auto;
+}

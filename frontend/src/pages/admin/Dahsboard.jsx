@@ -6,7 +6,7 @@ import { Box, Heading } from "@chakra-ui/react";
 const Dahsboard = () => {
 
   return (
-    <Box width={"100%"} border="1px solid green">
+    <Box width={"100%"} border="1px  ">
       <Heading>Dahsboard</Heading>
       <DashboardStats/>
      <DashboardGraph/>

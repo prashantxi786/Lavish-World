@@ -47,7 +47,7 @@ const Products = () => {
         // w={{ base: "100%", md: "71%", lg: "81.61%" }}
         // ml={{ base: "0%", md: "29%", lg: "18.39%" }}
       >
-        <Heading>Products</Heading>
+        <Heading color="black">Products</Heading>
         <Text color={"#00b5b8"}>List of Products</Text>
 
         <Box mt={"30px"} w={"100%"}>

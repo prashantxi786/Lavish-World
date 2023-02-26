@@ -58,16 +58,16 @@ const toggle = ()=>setisOpen(!isOpen)
       style={{
         display: "flex",
         width: "100%",
-        border: "1px solid blue",
+        border: "1px solid ",
         color: "white",
       }}
     >
       <Box
-        bgColor={"blue"}
+        bgColor={"#a47669"}
         zIndex={2}
         minH="100Vh"
         maxW={isOpen ? "250px" : "50px"}
-        border="1px solid red"
+        border="1px solid "
         margin
         pl={"5"}
         pr={isOpen ? "5" : "10"}
@@ -117,7 +117,7 @@ const toggle = ()=>setisOpen(!isOpen)
           ))}
         </Stack>
       </Box>
-      <Box border="1px solid red" flex={1}>
+      <Box border="1px solid " bgColor={"lightgray"} flex={1}>
         {children}
       </Box>
     </Box>

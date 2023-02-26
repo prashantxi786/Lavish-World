@@ -23,17 +23,20 @@ import Home from "./Pages/HomePage/Home";
 
 
 function App() {
+  const adminPath = window.location.pathname === "/admin" ? false : true;
+      
+
   return (
     <div className="App">
 
-      
-      <div className="big">
+    {adminPath ?<><div className="big">
         <Navbar />
       </div> 
       <div className="small">
         <SmallNavbar />
 
-      </div> 
+      </div></> : <Allroutes/>}
+      
 
 
 
