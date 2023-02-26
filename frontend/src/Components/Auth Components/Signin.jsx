@@ -35,7 +35,6 @@ const Signin = () => {
     const toast=useToast()
     console.log(style)
     let signupForm={
-      firstname:"",
       email:"",
       password:""
     }
