@@ -49,14 +49,13 @@ const Signin = () => {
   return (
     <>
       <Text  onClick={onOpen} 
-              fontSize={'x-lg'}
-              fontWeight={400}
               color={'white'}
+              size="large"
+         
               _hover={{
                 color:"white",
                 // bg: '#458B6A',
-              }}><BsPerson className='icons' _hover={{
-                color:"red"}} color={"#616161"}/></Text>
+              }}><BsPerson   color={"#616161"} size={"25px"}/></Text>
       <Modal
         isCentered
         onClose={onClose}

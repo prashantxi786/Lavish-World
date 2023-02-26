@@ -1,6 +1,7 @@
 import { AiOutlineShoppingCart, AiOutlineSearch } from "react-icons/ai";
 import { BsPerson } from "react-icons/bs";
 import { FiHeart } from "react-icons/fi"
+import { NavLink } from "react-router-dom";
 import Logo from "../../assets/lavish_world_logo.png";
 
 import {
@@ -33,8 +34,8 @@ import {
 } from "@chakra-ui/react";
 import styles from "./Navbar.module.css";
 import { useState } from "react";
-
-
+import CartDrawer from "../../Pages/Cart/cartdrawer"
+import Signin from "../Auth Components/Signin";
 const Navbar = ({ display = "flex" }) => {
   // const [dropdown, setdropdown] = useState(false);
   const [dropdown1, setdropdown1] = useState(false);
@@ -74,10 +75,10 @@ const Navbar = ({ display = "flex" }) => {
 
             <Spacer />
 
-            <ButtonGroup gap="2" className={styles.rightside}>
+            <ButtonGroup gap="2" >
               <Flex>
                 <Center>
-                  <BsPerson className={styles.carticons} />
+                  <Signin />
                 </Center>
               </Flex>
 
@@ -87,11 +88,12 @@ const Navbar = ({ display = "flex" }) => {
                 </Center>
               </Flex>
 
-              <button className={styles.cartbtn} >
+              {/* <button className={styles.cartbtn} > */}
                 <Flex align="center">
-                  <AiOutlineShoppingCart className={styles.carticons1} />
+                  <CartDrawer/>
+                  {/* <AiOutlineShoppingCart  className={styles.carticons1} /> */}
                 </Flex>
-              </button>
+              {/* </button> */}
             </ButtonGroup>
           </Flex>
         </div>
@@ -100,29 +102,29 @@ const Navbar = ({ display = "flex" }) => {
         <Flex
           maxWidth="100%"
           alignItems="center"
-          gap="45px"
+          gap="40px"
           justify={"center"}
           display={display}
         >
-          <Link href="/new">New</Link>
-          <Link href="/massage"
+          <NavLink to="/new">New</NavLink>
+          <NavLink to="/massage"
             onMouseEnter={() => setdropdown1(true)}
             onMouseLeave={() => setdropdown1(false)}
           >
             Massage
-          </Link>
-          <Link href="/wellness"
+          </NavLink>
+          <NavLink to="/wellness"
             onMouseEnter={() => setdropdown2(true)}
             onMouseLeave={() => setdropdown2(false)}
           >
             Wellness
-          </Link>
-          <Link href="/sleep"
+          </NavLink>
+          <NavLink to="/sleep"
             onMouseEnter={() => setdropdown3(true)}
             onMouseLeave={() => setdropdown3(false)}
           >
             Sleep
-          </Link>
+          </NavLink>
           <Text
             onMouseEnter={() => setdropdown4(true)}
             onMouseLeave={() => setdropdown4(false)}

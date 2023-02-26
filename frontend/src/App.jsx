@@ -15,6 +15,7 @@ import CartDrawer from "./Pages/Cart/cartdrawer";
 import SignUp from "./Components/Auth Components/SignUp";
 import {CartPage} from "./Pages/Cart/cart";
 import Checkout from "./Pages/Checkout/checkout";
+import Home from "./Pages/HomePage/Home";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
       <div className="small">
         <SmallNavbar />
     </div>
+    {/* <Home/> */}
     <ProductsRoutes/>
     <Footer/>
 
