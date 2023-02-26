@@ -18,9 +18,7 @@
   padding: 100px;
   column-gap: 200px;
 }
-.container div{
-  border: 1px solid yellow;
-}
+
 
 .leftSection {
   width: 40%;

@@ -36,8 +36,9 @@ function App() {
       </div> 
 
 
-  
+
     <ProductsRoutes/>
+    
     <Footer/>
 
 

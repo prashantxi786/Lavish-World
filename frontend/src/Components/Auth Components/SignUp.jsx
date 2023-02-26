@@ -39,7 +39,9 @@ const SignUp = () => {
     }
   }
   return (
+
     <Box textAlign={"center"} py="50px">
+
       <Heading id={style.font}>
         Registeration
       </Heading>

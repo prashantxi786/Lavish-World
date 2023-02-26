@@ -34,8 +34,12 @@ import {
 } from "@chakra-ui/react";
 import styles from "./Navbar.module.css";
 import { useState } from "react";
+
 import Signin from "../Auth Components/Signin";
 import CartDrawer from "../../Pages/Cart/cartdrawer";
+
+import { NavLink } from "react-router-dom";
+
 const Navbar = ({ display = "flex" }) => {
   // const [dropdown, setdropdown] = useState(false);
   const [dropdown1, setdropdown1] = useState(false);
@@ -56,7 +60,7 @@ const Navbar = ({ display = "flex" }) => {
       <nav className={styles.nav_1}>
         <div className={styles.innernav}>
           <Flex alignItems="center" gap="2" p={1}>
-            <Image width="170px" height="75px" src={Logo} marginLeft="20px" />
+            <NavLink to="/"><Image width="170px" height="75px" src={Logo} marginLeft="20px" /></NavLink>
             <Box p="2" display={"flex"}>
               <InputGroup marginLeft={"100px"}>
                 <InputLeftElement
@@ -105,25 +109,25 @@ const Navbar = ({ display = "flex" }) => {
           justify={"center"}
           display={display}
         >
-          <Text>New</Text>
-          <Text
+          <NavLink to="/new">New</NavLink>
+          <NavLink to="/massage"
             onMouseEnter={() => setdropdown1(true)}
             onMouseLeave={() => setdropdown1(false)}
           >
             Massage
-          </Text>
-          <Text
+          </NavLink>
+          <NavLink to="/wellness"
             onMouseEnter={() => setdropdown2(true)}
             onMouseLeave={() => setdropdown2(false)}
           >
             Wellness
-          </Text>
-          <Text
+          </NavLink>
+          <NavLink to="/sleep"
             onMouseEnter={() => setdropdown3(true)}
             onMouseLeave={() => setdropdown3(false)}
           >
             Sleep
-          </Text>
+          </NavLink>
           <Text
             onMouseEnter={() => setdropdown4(true)}
             onMouseLeave={() => setdropdown4(false)}
