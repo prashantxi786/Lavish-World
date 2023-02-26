@@ -17,7 +17,7 @@ const SignUp = () => {
 
   }
   return (
-    <Box textAlign={"center"}>
+    <Box mb={"100"} textAlign={"center"}>
       <Heading id={style.font}>
         Registeration
       </Heading>

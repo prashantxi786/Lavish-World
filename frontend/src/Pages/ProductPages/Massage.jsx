@@ -25,7 +25,7 @@ const New = () => {
     }
     
   return (
-    <Flex width={"90%"} justifyContent="space-between" margin="auto" >
+    <Flex  width={"90%"} justifyContent="space-between" margin="auto" >
       <Flex width="20%" gap="5" align="flex-start"  color="grey" flexDirection={"column"} >
         <select style={{width:"100%"}} onChange={(e)=>sort(e.target.value)}>
           <option>Filter by price</option>

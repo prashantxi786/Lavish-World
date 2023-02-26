@@ -20,6 +20,7 @@ import { ChevronDownIcon ,SearchIcon} from '@chakra-ui/icons'
 import logo from "../../assets/lavish_world_logo.png"
 import { AiOutlineShoppingCart } from "react-icons/ai"
 
+
 const CartDrawer = () => {
   let style={
     width: "48px",
@@ -68,14 +69,15 @@ const CartDrawer = () => {
                     _hover={{
                       bg: '#458B6A',
                     }}>View More</Button>
-                <Button display={"block"} width="100%"
+                    
+                    <NavLink to="/checkout"><Button display={"block"} width="100%"
                     border={'1px solid #65c297'}
                     bg="white"
                     color={'black'}
                     _hover={{
                       bg: '#458B6A',
                       color:"white"
-                    }}>Checkout</Button>
+                    }}>Checkout</Button></NavLink>
               </AccordionPanel>
             </AccordionItem>
           </Accordion>

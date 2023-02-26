@@ -30,6 +30,7 @@ function App() {
     </div>
     {/* <Home/> */}
     <ProductsRoutes/>
+    
     <Footer/>
 
       {/* <Allroutes/> */}

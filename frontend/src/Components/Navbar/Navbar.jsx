@@ -56,7 +56,7 @@ const Navbar = ({ display = "flex" }) => {
       <nav className={styles.nav_1}>
         <div className={styles.innernav}>
           <Flex alignItems="center" gap="2" p={1}>
-            <Image width="170px" height="75px" src={Logo} marginLeft="20px" />
+            <NavLink to="/"><Image width="170px" height="75px" src={Logo} marginLeft="20px" /></NavLink>
             <Box p="2" display={"flex"}>
               <InputGroup marginLeft={"100px"}>
                 <InputLeftElement
