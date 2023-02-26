@@ -3,66 +3,38 @@ import { useEffect, useState } from "react";
 
 import { Box, Input, Text, Heading, Select } from "@chakra-ui/react";
 import { ProductCard } from "./ProductItem";
-//import { useSelector, useDispatch } from "react-redux";
-
-const data = [
-  {
-    image:
-      "https://cdn.shopify.com/s/files/1/0262/2226/4423/products/7840_DEEP_ROSE_3_800x.jpg?v=1593707009",
-    price: "$259.00",
-    category: "LELO",
-    desc: "",
-    ratings: 4,
-  },
-  {
-    image:
-      "https://cdn.shopify.com/s/files/1/0262/2226/4423/products/1812_Black_1_200x.jpg?v=1601585235",
-    price: "$259.00",
-    category: "LELO",
-    desc: "",
-    ratings: 4,
-  },
-  {
-    image:
-      "https://cdn.shopify.com/s/files/1/0262/2226/4423/products/7840_DEEP_ROSE_3_800x.jpg?v=1593707009",
-    price: "$259.00",
-    category: "LELO",
-    desc: "",
-    ratings: 4,
-  },
-  {
-    image:
-      "https://cdn.shopify.com/s/files/1/0262/2226/4423/products/7840_DEEP_ROSE_3_800x.jpg?v=1593707009",
-    price: "$259.00",
-    category: "LELO",
-    desc: "",
-    ratings: 4,
-  },
-];
+import axios from "axios";
+import { useSelector, useDispatch } from "react-redux";
+import Loader from "../../Components/admin/loader";
+import { getData } from "../../Redux/Admin/admin.product.action";
 
 const Products = () => {
- const [ProductCategory, setProductCategory] = useState("");
+  const [ProductCategory, setProductCategory] = useState("");
 
-  //  const { data, isloader,iserror } = useSelector((state) => state.Admin_Products_reducer);
-  ////  const dispatch = useDispatch();
+  const { data, isloader, iserror } = useSelector(
+    (state) => state.Admin_Products_reducer
+  );
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getData());
+  }, []);
+  // useEffect(()=>{
+  //   axios.get("https://good-gray-drill-hose.cyclic.app/items").then((res)=>setData(res.data));
+  // },[])
+  const handleCategories = (event) => {
+    const val = event.target.value;
+    console.log("category", val);
+    setProductCategory(val);
+  };
 
-    const handleCategories=(event)=>{
-        const val = event.target.value;
-   console.log("category",val);
-   setProductCategory(val);
 
-    }
-// useEffect(() => {
-//   dispatch(getData(ProductCategory));
-// }, [ProductCategory]);
- 
-// if(isloader){
-//   console.log("loader true")
-//   return <Loader />
-// }
-// if(iserror){
-//   return "ERROR-----"
-// }
+  if(isloader){
+    console.log("loader true")
+    return <Loader />
+  }
+  if(iserror){
+    return "ERROR-----"
+  }
 
   return (
     <>
@@ -75,7 +47,7 @@ const Products = () => {
         // w={{ base: "100%", md: "71%", lg: "81.61%" }}
         // ml={{ base: "0%", md: "29%", lg: "18.39%" }}
       >
-        <Heading>Products</Heading>
+        <Heading color="black">Products</Heading>
         <Text color={"#00b5b8"}>List of Products</Text>
 
         <Box mt={"30px"} w={"100%"}>

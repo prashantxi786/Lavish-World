@@ -6,19 +6,22 @@
 }
 
 .container {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 30px;
   width: 100%;
   height: 34rem;
   color: #fff;
   display: flex;
   background-color: #50514f;
   align-items: center;
-  padding-left: 150px;
+  padding: 100px;
   column-gap: 200px;
 }
 
+
 .leftSection {
-  width: 30%;
-  height: 22rem;
+  width: 40%;
 }
 .leftSection p:first-child {
   font-size: 24px;
@@ -49,9 +52,7 @@
   cursor: pointer;
 }
 .rightSection {
-  width: 800px;
-  height: auto;
-  margin-right: 130px;
+  width: 100%;
 }
 .rightbtn {
   width: 100%;
@@ -83,77 +84,74 @@
   letter-spacing: 1px;
 }
 
-@media screen and (max-width: 1324px) {
-  .container {
-    width: 100%;
+
+
+ /* Mobile View */
+ @media screen and (min-width:250px) and (max-width:480px) {
+  .container{
+    grid-template-columns: repeat(1);
+    row-gap: 20px;
   }
-  .leftSection p:last-child {
-    font-size: 10px;
-    text-align: center;
+}
+
+ /* Tablet View */
+ @media screen and (min-width:481px) and (max-width:1024px) {
+  .container{
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(2,1fr);
+    column-gap: 60px;
+  }
+  .leftSection p:first-child {
+    font-size: 20px;
+    font-weight: bold;
     text-align: left;
   }
-  .footbtn {
+  .leftSection p:last-child {
     width: 100%;
     font-size: 10px;
+    text-align: left;
+    letter-spacing: 1px;
+    margin-top: 10px;
+  }
+  .footbtn {
+    display: block;
+    width: 80%;
+    background-color: #65c297;
+    font-size: 12px;
+    letter-spacing: 2px;
   }
   .socialicon {
-    font-size: 18px;
-    margin-top: 20px;
+    font-size: 20px;
   }
   .rightSection {
-    position: relative;
-    left: -60px;
     width: 100%;
-    padding: 20px;
-    
   }
   .rightbtn {
     width: 100%;
-    padding: 15px;
+    padding: 10px;
     background-color: #ffb1c7;
     border-radius: 10px;
-    font-size: 10px;
+    font-size: 12px;
     letter-spacing: 5px;
     font-weight: 600;
     color: black;
   }
-  .listSection ul li:first-child {
+  .listSection {
     width: 100%;
+    display: flex;
+    gap: 60px;
   }
-}
-
-
-@media screen and (max-width: 600px) {
-  .container {
-    width: 100%;
-    margin: auto;
+  .listSection ul {
+    text-align: left;
+    margin-top: 30px;
   }
-  .leftSection {
-    position: relative;
-    left: 70px;
-    width: 100%;
-    margin: auto;
-  }
-  .leftSection p:last-child {
-    position: relative;
-    left: -20px;
-    width: 50%;
-    font-size: 8px;
-    text-align: center;
-  }
-  .rightSection {
-    display: none;
-  }
-
-  .footbtn {
-    position: relative;
-    left: -20px;
-    width: 50%;
+  .listSection ul li {
+    margin-top: 4px;
     font-size: 10px;
   }
-
-  .socialicon {
-    font-size: 20px;
-    margin-top: 20px;
+  .listSection ul li:first-child {
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-size: 10px;
   }
 }

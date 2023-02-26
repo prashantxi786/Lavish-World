@@ -1,3 +1,4 @@
+
 import { AiOutlineShoppingCart, AiOutlineSearch } from "react-icons/ai";
 import { BsPerson } from "react-icons/bs";
 import { FiHeart } from "react-icons/fi"
@@ -29,11 +30,11 @@ import {
   InputLeftElement,
   InputGroup,
   Input,
-  Text,Link
+  Text,
 } from "@chakra-ui/react";
 import styles from "./Navbar.module.css";
 import { useState } from "react";
-
+import { NavLink } from "react-router-dom";
 
 const Navbar = ({ display = "flex" }) => {
   // const [dropdown, setdropdown] = useState(false);
@@ -55,7 +56,7 @@ const Navbar = ({ display = "flex" }) => {
       <nav className={styles.nav_1}>
         <div className={styles.innernav}>
           <Flex alignItems="center" gap="2" p={1}>
-            <Image width="170px" height="75px" src={Logo} marginLeft="20px" />
+            <NavLink to="/"><Image width="170px" height="75px" src={Logo} marginLeft="20px" /></NavLink>
             <Box p="2" display={"flex"}>
               <InputGroup marginLeft={"100px"}>
                 <InputLeftElement
@@ -104,25 +105,25 @@ const Navbar = ({ display = "flex" }) => {
           justify={"center"}
           display={display}
         >
-          <Link href="/new">New</Link>
-          <Link href="/massage"
+          <NavLink to="/new">New</NavLink>
+          <NavLink to="/massage"
             onMouseEnter={() => setdropdown1(true)}
             onMouseLeave={() => setdropdown1(false)}
           >
             Massage
-          </Link>
-          <Link href="/wellness"
+          </NavLink>
+          <NavLink to="/wellness"
             onMouseEnter={() => setdropdown2(true)}
             onMouseLeave={() => setdropdown2(false)}
           >
             Wellness
-          </Link>
-          <Link href="/sleep"
+          </NavLink>
+          <NavLink to="/sleep"
             onMouseEnter={() => setdropdown3(true)}
             onMouseLeave={() => setdropdown3(false)}
           >
             Sleep
-          </Link>
+          </NavLink>
           <Text
             onMouseEnter={() => setdropdown4(true)}
             onMouseLeave={() => setdropdown4(false)}

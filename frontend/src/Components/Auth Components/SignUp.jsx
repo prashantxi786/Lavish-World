@@ -4,8 +4,8 @@ import style from "./Signin.module.css"
 import { useState } from 'react';
 const SignUp = () => {
   let obj={
-    firstname:"",
-    lastname:"",
+    name:"",
+    gender:"",
     email:"",
     password:""
   }
@@ -17,7 +17,7 @@ const SignUp = () => {
 
   }
   return (
-    <Box textAlign={"center"}>
+    <Box mb={"100"} textAlign={"center"}>
       <Heading id={style.font}>
         Registeration
       </Heading>
@@ -28,11 +28,11 @@ const SignUp = () => {
         </Box>
         <Box>
           <Text>First Name</Text>
-          <Input placeholder='First Name' name="firstname" value={state.fullname} onChange={handleChange}></Input>
+          <Input placeholder='First Name' name="firstname" value={state.name} onChange={handleChange}></Input>
         </Box>
         <Box>
-          <Text>Last Name</Text>
-          <Input placeholder='Last Name' name="lastname" value={state.lastnameemail} onChange={handleChange}></Input>
+          <Text>Gender</Text>
+          <Input placeholder='Last Name' name="lastname" value={state.gender} onChange={handleChange}></Input>
         </Box>
         <Box>
           <Text>Email</Text>
