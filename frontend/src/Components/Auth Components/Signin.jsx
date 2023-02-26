@@ -35,7 +35,6 @@ const Signin = () => {
     const toast=useToast()
     console.log(style)
     let signupForm={
-      firstname:"",
       email:"",
       password:""
     }
@@ -49,14 +48,13 @@ const Signin = () => {
   return (
     <>
       <Text  onClick={onOpen} 
-              fontSize={'x-lg'}
-              fontWeight={400}
               color={'white'}
+              size="large"
+         
               _hover={{
                 color:"white",
                 // bg: '#458B6A',
-              }}><BsPerson className='icons' _hover={{
-                color:"red"}} color={"#616161"}/></Text>
+              }}><BsPerson   color={"#616161"} size={"25px"}/></Text>
       <Modal
         isCentered
         onClose={onClose}
@@ -71,14 +69,14 @@ const Signin = () => {
       minH={'30vh'}
       align={'center'}
       justify={'center'}
-      bg={useColorModeValue('gray.50', 'gray.800')}>
-      <Stack spacing={8} mx={'auto'} maxW={'lg'} py={2} px={6}>
+      bg={useColorModeValue('white', 'white')}>
+      <Stack spacing={8} mx={'auto'} maxW={'lg'} bg="white">
         <Stack align={'center'}>
           <Heading id={style.font} fontSize={'3xl'}>Sign in to your account</Heading>
         </Stack>
         <Box
           rounded={'lg'}
-          bg={useColorModeValue('white', 'gray.700')}
+          bg={useColorModeValue('white', 'white')}
           boxShadow={'lg'}
           p={8}
           >
@@ -103,7 +101,7 @@ const Signin = () => {
               </Button>
               <Box>
              <Text>
-              Already User?
+              Already have an account?
               </Text> 
             <NavLink
                to="/signUp"

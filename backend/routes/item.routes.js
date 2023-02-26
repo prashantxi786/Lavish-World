@@ -2,35 +2,42 @@ const express = require('express')
 const itemRouter = express.Router()
 const {ItemModel} = require("../models/item.model")
 itemRouter.get('/',async(req, res) =>{
+    const {title,min,max,price,category}=req.query
     try {
-        if(req.query.title){
-            if(req.query.title=="atoz"){
-                const items=await ItemModel.find().sort({product_title:1})
+        if(title){
+            if(title=="atoz"){
+                const items=await ItemModel.find({category}).sort({product_title:1})
                 res.send(items)
             }
-            else if(req.query.title=="ztoa"){
-                const items=await ItemModel.find().sort({product_title:-1})
+            else if(title=="ztoa"){
+                const items=await ItemModel.find({category}).sort({product_title:-1})
+                res.send(items)
+            }
+            else{
+                const items=await ItemModel.find({title})
                 res.send(items)
             }
             
         }
-        else if(req.query.min||req.query.max){
-            const items=await ItemModel.find({$and:[{price:{$gte:req.query.min}},{price:{$lt:req.query.max}}]})
+        else if(min&&max){
+            const items=await ItemModel.find({$and:[{category},{price:{$gte:min}},{price:{$lte:max}}]})
             res.send(items)
         }
-        else if(req.query.price){
-            if(req.query.price=="lth"){
-                const items=await ItemModel.find().sort({price:1})
+        else if(price){
+            if(req.query.price=="htl"){
+                const items=await ItemModel.find({category}).sort({price:-1})
                 res.send(items)
             }
-            else{
-                const items=await ItemModel.find().sort({price:-1})
+            else {
+                const items=await ItemModel.find({category}).sort({price:1})
                 res.send(items)
             }
+        
         }
+        
         else{
-
             const items = await ItemModel.find(req.query)
+            console.log(req.query)
             res.send(items)
         }
     } catch (error) {
