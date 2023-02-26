@@ -2,25 +2,61 @@ import React from 'react';
 import {Box,Heading, Input,Button, Text} from "@chakra-ui/react"
 import style from "./Signin.module.css"
 import { useState } from 'react';
+import axios from "axios"
+import { useDispatch } from 'react-redux';
+import { register } from '../../Redux/Auth/auth.product.action';
+import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { Navigate } from 'react-router-dom';
+import { Oval } from  'react-loader-spinner'
 const SignUp = () => {
+  const dispatch=useDispatch()
+  const store=useSelector(store=>store.auth)
+  let ref = React.useRef(null);
   let obj={
     name:"",
     gender:"",
     email:"",
     password:""
   }
+  const navigate=useNavigate()
+  React.useEffect(() => {
+    if(store.token!=""){
+      navigate("/")
+    }
+  }, [store.token]);
+ 
   const [state,setState]=useState(obj)
   const handleChange=(e)=>{
     setState({...state,[e.target.name]:e.target.value})
   }
-  const handleSubmit=()=>{
-
+  const handleSubmit=async()=>{
+    if(state.name!=="" && state.gender!=="" && state.email!=="" && state.password!==""){
+      dispatch(register(state))
+  
+    }else{
+      console.log("fill all the detaiils")
+    }
   }
   return (
-    <Box mb={"100"} textAlign={"center"}>
+
+    <Box textAlign={"center"} py="50px">
+
       <Heading id={style.font}>
         Registeration
       </Heading>
+      {store.isloader?(<Box display={"flex"} justifyContent="center" h="600px" alignItems={"center"}><Oval
+  height={80}
+  width={80}
+  color="#4fa94d"
+  wrapperStyle={{}}
+  wrapperClass=""
+  visible={true}
+  ariaLabel='oval-loading'
+  secondaryColor="#4fa94d"
+  strokeWidth={2}
+  strokeWidthSecondary={2}
+/></Box>):<>
       <Box textAlign={"left"} margin="auto" w="50%" display={"flex"} flexDir="column" gap="20px" mt="50px">
         <Box >
           <Text fontSize={"20px"} textAlign={"center"}>Create customer</Text>
@@ -28,11 +64,11 @@ const SignUp = () => {
         </Box>
         <Box>
           <Text>First Name</Text>
-          <Input placeholder='First Name' name="firstname" value={state.name} onChange={handleChange}></Input>
+          <Input placeholder='Name' name="name" value={state.name} onChange={handleChange}></Input>
         </Box>
         <Box>
           <Text>Gender</Text>
-          <Input placeholder='Last Name' name="lastname" value={state.gender} onChange={handleChange}></Input>
+          <Input placeholder='Gender' name="gender" value={state.gender} onChange={handleChange}></Input>
         </Box>
         <Box>
           <Text>Email</Text>
@@ -52,9 +88,9 @@ const SignUp = () => {
                 }}
                 onClick={handleSubmit} 
                 >SUBMIT</Button>
-      </Box>
+      </Box></>}
     </Box>
   );
 }
 
-export default SignUp;
+export default SignUp

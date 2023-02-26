@@ -34,6 +34,10 @@ import {
 } from "@chakra-ui/react";
 import styles from "./Navbar.module.css";
 import { useState } from "react";
+
+import Signin from "../Auth Components/Signin";
+import CartDrawer from "../../Pages/Cart/cartdrawer";
+
 import { NavLink } from "react-router-dom";
 
 const Navbar = ({ display = "flex" }) => {
@@ -78,7 +82,7 @@ const Navbar = ({ display = "flex" }) => {
             <ButtonGroup gap="2" className={styles.rightside}>
               <Flex>
                 <Center>
-                  <BsPerson className={styles.carticons} />
+                  <Signin/>
                 </Center>
               </Flex>
 
@@ -88,11 +92,11 @@ const Navbar = ({ display = "flex" }) => {
                 </Center>
               </Flex>
 
-              <button className={styles.cartbtn} >
+    
                 <Flex align="center">
-                  <AiOutlineShoppingCart className={styles.carticons1} />
+                 <CartDrawer/>
                 </Flex>
-              </button>
+
             </ButtonGroup>
           </Flex>
         </div>

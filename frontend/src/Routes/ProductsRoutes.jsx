@@ -6,7 +6,9 @@ import Wellness from "../Pages/ProductPages/Wellness"
 import Massage from "../Pages/ProductPages/Massage"
 import Home from "../Pages/HomePage/Home"
 import SignUp from "../Components/Auth Components/SignUp"
+
 import Checkout from "../Pages/Checkout/checkout"
+
 
 const ProductsRoutes = () => {
   return (
@@ -18,7 +20,6 @@ const ProductsRoutes = () => {
         <Route path="/wellness" element={<Wellness/>}/>
         <Route path="/signUp" element={<SignUp/>}/>
         <Route path="/checkout" element={<Checkout/>}/>
-        
     </Routes>
   )
 }

@@ -16,7 +16,6 @@ import Dahsboard from "./Pages/admin/Dahsboard";
 
 
 
-
 import CartDrawer from "./Pages/Cart/cartdrawer";
 import SignUp from "./Components/Auth Components/SignUp";
 import Checkout from "./Pages/Checkout/checkout";
@@ -37,8 +36,7 @@ function App() {
       </div> 
 
 
-    
-  
+
     <ProductsRoutes/>
     
     <Footer/>
