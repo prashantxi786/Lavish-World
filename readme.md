@@ -24,7 +24,7 @@ Lavish World is a lifestyle brand which covers all luxury lifestyle wants at one
   <img src="https://img.shields.io/badge/vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="vercel" />
 </p>
 
-<h3 align="center"><a href="https://ajio-app.vercel.app/"><strong>Want to see live preview »</strong></a></h3>
+<h3 align="center"><a href=""><strong>Want to see live preview »</strong></a></h3>
 
 <br/>
 
