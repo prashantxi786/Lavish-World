@@ -1,8 +1,4 @@
 
-
-port=8080
-mongoUrl="mongodb+srv://Prashant:prashantsingh@cluster0.josnch6.mongodb.net/LavishWorldDb?retryWrites=true&w=majority"
-
 backend deployed link : https://good-gray-drill-hose.cyclic.app/items
 # Project Title
 
@@ -61,13 +57,13 @@ Lavish World is a lifestyle brand which covers all luxury lifestyle wants at one
 Clone the project
 
 ```bash
-  git clone https://github.com/piyushkhurana8744/-prompt-wilderness-693.git
+  git clone https://github.com/prashantxi786/frantic-week-8502.git
 ```
 
 Go to the project directory
 
 ```bash
-  cd prompt-wilderness-693
+  cd frantic-week-8502
 ```
 
 Install dependencies for frontend as well as backend
@@ -82,12 +78,10 @@ Start the localhost server
 ```bash
   npm start
 ```
-
+port=8080
 ## Deployed link
-
-### Vercel Link
-
-[https://ajio-app.vercel.app/](https://ajio-app.vercel.app/)
+<p>backend deployed link : https://good-gray-drill-hose.cyclic.app/items </p>
+### Netlify Link
 
 ## Show your support
 
