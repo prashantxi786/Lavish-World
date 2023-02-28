@@ -17,7 +17,7 @@ Lavish World is a lifestyle brand which covers all luxury lifestyle wants at one
 <h2 align="center">🖥️ Tech Stack</h2>
 
 <h4 align="center">Frontend:</h4>
-<p align="center"
+<p align="center">
   HTML5, CSS, JavaScript, ReactJs, MongoDb, ExpressJs, Node Js 
 </p>
 
