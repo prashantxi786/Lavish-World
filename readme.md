@@ -34,6 +34,7 @@ Lavish World is a lifestyle brand which covers all luxury lifestyle wants at one
 -   Cart Add and Remove Items
 -   Order Summary
 
+
 ## Collaborative Project built by 4 developers in 5 days
 
  * Prashant Singh 
