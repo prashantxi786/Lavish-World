@@ -93,8 +93,9 @@ Lavish World is a lifestyle brand which covers all luxury lifestyle wants at one
 ```bash
   npm start
 ```
-port=8080
-
+```Port
+  8080
+```
 
 ## Show your support
 
