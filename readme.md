@@ -20,7 +20,7 @@ Lavish World is a lifestyle brand which covers all luxury lifestyle wants at one
 - HTML & CSS
 - NodeJs
 - MongoDB
-- Express
+- ExpressJS
 
 ## Features Implemented
 
