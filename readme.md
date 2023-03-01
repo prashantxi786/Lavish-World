@@ -60,12 +60,9 @@ Lavish World is a lifestyle brand which covers all luxury lifestyle wants at one
 
 ## Add To Cart Page
 
-
 ## Buy Now Page
 
-
 ## Payment Page
-
 
 ## Admin Page
 
