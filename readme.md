@@ -36,10 +36,10 @@ Lavish World is a lifestyle brand which covers all luxury lifestyle wants at one
 
 ## Collaborative Project built by 4 developers in 5 days
 
- * Prashant Singh - [[LinkedIn Profile](https://www.linkedin.com/in/piyush8744/)] [[Github Profile](https://github.com/piyushkhurana8744)]
- * Abhinandan Kumar - [[LinkedIn Profile](https://www.linkedin.com/in/mayank-singh-ab196110b/)] [[Github Profile](https://github.com/mak-1997)]
- * Kirtiraj Ingale - [[LinkedIn Profile](https://www.linkedin.com/in/parag-sonje-b648bb236/)] [[Github Profile](https://github.com/Parag2510)]
- * Akshay Verma - [[LinkedIn Profile](https://www.linkedin.com/in/vipul-vatsa-20b8b9162/)] [[Github Profile](https://github.com/Vipulvatsa07)]
+ * Prashant Singh 
+ * Abhinandan Kumar 
+ * Kirtiraj Ingale 
+ * Akshay Verma 
  
 # Overview Of Project
 
