@@ -1,6 +1,6 @@
 <h1>Lavish World ( Clone - BrookStone.com )</h1>
 
-Lavish World is a lifestyle brand which covers all luxury lifestyle wants at one place.
+Lavish World is a lifestyle brand which covers all luxury lifestyle wants at one place. It's a Full Stack E-commerce web application with all the major functionalities.
 
 ## [Backend Deployed Link](https://good-gray-drill-hose.cyclic.app/items)
 ## [Netlify Deployed Link](https://stellar-clafoutis-871554.netlify.app/) 
